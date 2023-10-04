@@ -1,0 +1,12 @@
+{
+    "projectName": "EthicsMl",
+    "languages": [{
+        "id": "ethics-ml",
+        "grammar": "src/language/ethics-ml.langium",
+        "fileExtensions": [".ethml", ".ethics"],
+        "textMate": {
+            "out": "syntaxes/ethics-ml.tmLanguage.json"
+        }
+    }],
+    "out": "src/language/generated"
+}

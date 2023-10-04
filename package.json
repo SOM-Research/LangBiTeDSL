@@ -1,0 +1,131 @@
+{
+    "name": "EthicsML",
+    "description": "EthicsML is a domain-specific language plug-in to describe ethical requirements for generative AI models and test scenarios.",
+    "version": "0.0.1",
+    "files": [
+        "bin",
+        "out",
+        "src"
+    ],
+    "publisher": "SOMResearchGroup",
+    "author": {
+        "name": "Sergio Morales"
+    },
+    "keywords": [
+        "Generative AI",
+        "Requirements",
+        "Ethics",
+        "Testing",
+        "LLM",
+        "DSL"
+    ],
+    "license": "GPLv3",
+    "type": "module",
+    "scripts": {
+        "build": "tsc -b tsconfig.json && node esbuild.mjs",
+        "watch": "concurrently -n tsc,esbuild -c blue,yellow \"tsc -b tsconfig.json --watch\" \"node esbuild.mjs --watch\"",
+        "lint": "eslint src --ext ts",
+        "langium:generate": "langium generate",
+        "langium:watch": "langium generate --watch",
+        "vscode:prepublish": "npm run build && npm run lint"
+    },
+    "dependencies": {
+        "chalk": "~5.3.0",
+        "commander": "~10.0.0",
+        "langium": "~2.0.0",
+        "vscode-languageclient": "~8.0.2"
+    },
+    "devDependencies": {
+        "@types/node": "~16.18.11",
+        "@types/vscode": "~1.67.0",
+        "@typescript-eslint/eslint-plugin": "~5.58.0",
+        "@typescript-eslint/parser": "~5.58.0",
+        "concurrently": "^7.6.0",
+        "esbuild": "^0.18.14",
+        "eslint": "~8.33.0",
+        "langium-cli": "~2.0.0",
+        "typescript": "~5.0.4"
+    },
+    "displayName": "EthicsML",
+    "engines": {
+        "vscode": "^1.67.0",
+        "node": ">=16.0.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "ethics-ml",
+                "aliases": [
+                    "EthicsML",
+                    "EthicsMl",
+                    "ethics-ml"
+                ],
+                "extensions": [
+                    ".ethml",
+                    ".ethics"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "ethics-ml",
+                "scopeName": "source.ethics-ml",
+                "path": "./syntaxes/ethics-ml.tmLanguage.json"
+            }
+        ],
+        "commands": [
+            {
+                "command": "ethics-ml.generateJson",
+                "title": "Generate JSON",
+                "shortTitle": "Generate JSON",
+                "category": "EthicsML",
+                "icon": {
+                    "light": "icons/json.png",
+                    "dark": "icons/json.png"
+                }
+            },
+            {
+                "command": "ethics-ml.saveJsonDocument",
+                "title": "Save JSON",
+                "shortTitle": "Save JSON",
+                "category": "EthicsML",
+                "icon": {
+                    "light": "icons/download.png",
+                    "dark": "icons/download.png"
+                }
+            }
+        ],
+        "menus": {
+            "editor/title": [
+                {
+                    "when": "resourceLangId == ethics-ml",
+                    "command": "ethics-ml.generateJson",
+                    "group": "navigation"
+                },
+                {
+                    "when": "liveJSONPreviewer",
+                    "command": "ethics-ml.saveJsonDocument",
+                    "group": "navigation"
+                }
+            ]
+        },
+        "iconThemes": [
+            {
+                "id": "ethicsml",
+                "label": "Ethics ML",
+                "path": "./icons/ethics-ml.icon-theme.json"
+            }
+        ]
+    },
+    "activationEvents": [
+        "onLanguage:ethics-ml"
+    ],
+    "main": "./out/extension/main.cjs",
+    "bin": {
+        "ethics-ml-cli": "./bin/cli.js"
+    }
+}
