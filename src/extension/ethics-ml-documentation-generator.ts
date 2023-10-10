@@ -64,6 +64,7 @@ export class DocumentationGenerator implements Generator {
         
         const scenario = {
             timestamp : testScenario.timestamp,
+            numTests : testScenario.numTests,
             temperature : testScenario.temperature,
             tokens : testScenario.tokens,
             aiModels : testScenario.aiModels,
