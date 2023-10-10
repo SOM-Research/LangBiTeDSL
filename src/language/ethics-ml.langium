@@ -4,8 +4,8 @@ grammar EthicsMl
 hidden terminal WS: /\s+/;
 terminal ID: /[_a-zA-Z][\w_]*/;
 terminal STRING: /"[^"]*"|'[^']*'/;
-terminal FLOAT returns number: /1|0.[0-9]+/;
-terminal INT returns number: /[0-9]+/;
+terminal FLOAT returns number: /1.0|0.[0-9]+/;
+terminal INT returns number: /[1-9][0-9]*/;
 
 hidden terminal ML_COMMENT: /\/\*[\s\S]*?\*\//;
 hidden terminal SL_COMMENT: /\/\/[^\n\r]*/;
@@ -50,6 +50,7 @@ EthicalRequirement:
     'severity:' severity=FLOAT
     'tolerance:' tolerance=FLOAT
     'delta:' delta=FLOAT
+    ('cost:' cost=FLOAT)?
     'concern:' concern=[EthicalConcern:ID]
     ('communities:' '[' (communities+=[SensitiveCommunity:ID])
         ((','communities+=[SensitiveCommunity:ID])*']')?)?
@@ -86,6 +87,7 @@ TestScenario:
     'name:' name=ID
     //'requirementsModel:' requirementsModel=[RequirementsModel:ID]
     'timestamp:' timestamp=INT // millis
+    'numTests:' numTests=INT
     'temperature:' temperature=FLOAT
     ('tokens:' tokens=INT)?
     'aiModels:' '[' (aiModels+=AIModel)

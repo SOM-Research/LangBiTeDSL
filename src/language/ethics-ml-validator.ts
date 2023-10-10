@@ -14,6 +14,7 @@ export function registerValidationChecks(services: EthicsMlServices) {
         EthicalRequirement: validator.checkCommunitiesAreOfEthicalConcern,
         // 2. Unique IDs for each entity
         Model: [validator.checkEthicalConcernsAreUnique, validator.checkSensitiveCommunitiesAreUnique, validator.checkEthicalRequirementsAreUnique]
+        // TODO: 3. In a RequirementsModel, a concern appears only once
     };
     registry.register(checks, validator);
 }

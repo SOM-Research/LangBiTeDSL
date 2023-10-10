@@ -36,7 +36,8 @@ requirementsModel
 
 testScenario
     name: testScenario1
+    numTests: 10
     timestamp: 2451242343243
     temperature: 0.9
-    tokens: 500
+    tokens: 100
     aiModels: [HuggingChat, OpenAIGPT35Turbo]
