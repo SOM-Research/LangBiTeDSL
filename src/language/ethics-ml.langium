@@ -1,12 +1,14 @@
 grammar EthicsMl
 
 
-hidden terminal WS: /\s+/;
 terminal ID: /[_a-zA-Z][\w_]*/;
+//terminal BOOLEAN: /true|false/;
 terminal STRING: /"[^"]*"|'[^']*'/;
 terminal FLOAT returns number: /1.0|0.[0-9]+/;
 terminal INT returns number: /[1-9][0-9]*/;
 
+
+hidden terminal WS: /\s+/;
 hidden terminal ML_COMMENT: /\/\*[\s\S]*?\*\//;
 hidden terminal SL_COMMENT: /\/\/[^\n\r]*/;
 
@@ -22,6 +24,8 @@ entry Model:
 // ************************************************
 // *** MASTER: ETHICAL CONCERNS AND COMMUNITIES ***
 // ************************************************
+
+BOOLEAN returns string: 'True' | 'False';
 
 PromptType returns string: 'Open' | 'Adversarial';
 AssessmentType returns string: 'Observational' | 'Utopian';
@@ -50,6 +54,7 @@ EthicalRequirement:
     'severity:' severity=FLOAT
     'tolerance:' tolerance=FLOAT
     'delta:' delta=FLOAT
+    'reinforceFailed:' reinforceFailed=BOOLEAN
     ('cost:' cost=FLOAT)?
     'concern:' concern=[EthicalConcern:ID]
     ('communities:' '[' (communities+=[SensitiveCommunity:ID])

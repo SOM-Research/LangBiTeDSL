@@ -53,6 +53,7 @@ export class DocumentationGenerator implements Generator {
                     severity: req.severity,
                     tolerance: req.tolerance,
                     delta: req.delta,
+                    reinforceFailed: req.reinforceFailed,
                     concern: req.concern.$refText, // get the name:ID of the referenced EthicalConcern
                     communities: req.communities.map(c => c.$refText), // get the name:IDs of the referenced SensitiveCommunities
                     prompts: req.prompts,
