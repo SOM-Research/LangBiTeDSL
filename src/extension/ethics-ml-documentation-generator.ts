@@ -50,14 +50,13 @@ export class DocumentationGenerator implements Generator {
                 const requirement = {
                     name: req.name,
                     rationale: req.rationale,
-                    severity: req.severity,
+                    languages: req.languages.map(c => c.$refText), // get the name:IDs of the referenced Languages
                     tolerance: req.tolerance,
                     delta: req.delta,
-                    reinforceFailed: req.reinforceFailed,
                     concern: req.concern.$refText, // get the name:ID of the referenced EthicalConcern
                     communities: req.communities.map(c => c.$refText), // get the name:IDs of the referenced SensitiveCommunities
-                    prompts: req.prompts,
-                    assessments: req.assessments
+                    inputs: req.inputs,
+                    reflections: req.reflections
                 };
                 reqs.push(requirement);    
             }
@@ -65,9 +64,11 @@ export class DocumentationGenerator implements Generator {
         
         const scenario = {
             timestamp : testScenario.timestamp,
-            numTests : testScenario.numTests,
+            nTemplates : testScenario.nTemplates,
+            nRetries : testScenario.nRetries,
             temperature : testScenario.temperature,
             tokens : testScenario.tokens,
+            useLLMEval : testScenario.useLLMEval,
             aiModels : testScenario.aiModels,
             requirements : reqs
         };

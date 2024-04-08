@@ -13,6 +13,7 @@ hidden terminal ML_COMMENT: /\/\*[\s\S]*?\*\//;
 hidden terminal SL_COMMENT: /\/\/[^\n\r]*/;
 
 entry Model:
+    (languages+=Language)+
     (ethicalConcerns+=EthicalConcern | sensitiveCommunities+=SensitiveCommunity)+
     (ethicalRequirements+=EthicalRequirement)+
     //ethicalRequirementCombinations+=EthicalRequirementCombination |
@@ -27,8 +28,10 @@ entry Model:
 
 BOOLEAN returns string: 'True' | 'False';
 
-PromptType returns string: 'Open' | 'Adversarial';
-AssessmentType returns string: 'Observational' | 'Utopian';
+// PromptType returns string: 'Open' | 'Adversarial';
+// AssessmentType returns string: 'Observational' | 'Utopian';
+InputKind returns string: 'constrained'|'verbose';
+ReflectionKind returns string: 'observational'|'utopian';
 
 EthicalConcern:
     'ethicalConcern'
@@ -40,36 +43,38 @@ EthicalConcern:
 SensitiveCommunity:
     'sensitiveCommunity'
     name=ID
-    description=STRING;
+    (description=STRING)?;
 
 
 // ****************************************************
 // *** END-USER DEFINED: ETHICAL REQUIREMENTS MODEL ***
 // ****************************************************
 
+Language:
+    'language'
+    name=ID
+    code=STRING
+    region=STRING;
+
 EthicalRequirement:
     'ethicalRequirement'
     'name:' name=ID
     'rationale:' rationale=STRING
-    'severity:' severity=FLOAT
+    'languages:' ('[' (languages+=[Language:ID])
+        ((','languages+=[Language:ID])*']'))?
     'tolerance:' tolerance=FLOAT
     'delta:' delta=FLOAT
-    'reinforceFailed:' reinforceFailed=BOOLEAN
-    ('cost:' cost=FLOAT)?
     'concern:' concern=[EthicalConcern:ID]
     ('communities:' '[' (communities+=[SensitiveCommunity:ID])
         ((','communities+=[SensitiveCommunity:ID])*']')?)?
-    'prompts:' '[' prompts+=PromptType
-        ((','prompts+=PromptType)*']')?
-    'assessments:' '[' assessments+=AssessmentType
-        ((','assessments+=AssessmentType)*']')?;
+    'inputs:' '[' inputs+=InputKind
+        ((','inputs+=InputKind)*']')?
+    'reflections:' '[' reflections+=ReflectionKind
+        ((','reflections+=ReflectionKind)*']')?;
 
 fragment Requirements:
     'requirements:' ('[' (requirements+=[EthicalRequirement:ID])
         ((','requirements+=[EthicalRequirement:ID])*']'))?;
-
-EthicalRequirementCombination:
-    'combination' Requirements;
 
 RequirementsModel:
     'requirementsModel'
@@ -92,8 +97,10 @@ TestScenario:
     'name:' name=ID
     //'requirementsModel:' requirementsModel=[RequirementsModel:ID]
     'timestamp:' timestamp=INT // millis
-    'numTests:' numTests=INT
+    'nTemplates:' nTemplates=INT
+    'nRetries:' nRetries=INT
     'temperature:' temperature=FLOAT
     ('tokens:' tokens=INT)?
+    'useLLMEval:' useLLMEval=BOOLEAN
     'aiModels:' '[' (aiModels+=AIModel)
         ((','aiModels+=AIModel)*']')?;
