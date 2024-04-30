@@ -47,18 +47,33 @@ export class DocumentationGenerator implements Generator {
         modelReqIds.forEach(function(reqId: string) {
             let req = requirements.find(r => r.name === reqId);
             if (req != undefined) {
-                const requirement = {
+                const reqCommsRefs = req.communities;
+                const reqLangsRefs = req.languages;
+                let commsLiterals : { [key: string]: string[] } = {};
+                // collect all the Language objects that are referenced by the Requirement
+                let langs = model.languages.filter(l => reqLangsRefs.map(l2 => l2.$refText).includes(l.name));
+                // transform into code+region
+                let langsKeys = langs.map(l => l.code + "_" + l.region);
+                // for each requirement language, collect the communities' literals
+                langs.forEach(lang => {
+                    const comms = model.sensitiveCommunities.filter(c => reqCommsRefs.map(c2 => c2.$refText).includes(c.name));
+                    const literals = comms.flatMap(c => c.literals).filter(l => l.language.$refText == lang.name).map(l => l.literal);
+                    const key = lang.code + "_" + lang.region;
+                    commsLiterals[key] = literals;
+                });
+                let requirement = {
                     name: req.name,
                     rationale: req.rationale,
-                    languages: req.languages.map(c => c.$refText), // get the name:IDs of the referenced Languages
+                    languages: langsKeys, //req.languages.map(c => c.$refText), // get the name:IDs of the referenced Languages
                     tolerance: req.tolerance,
                     delta: req.delta,
                     concern: req.concern.$refText, // get the name:ID of the referenced EthicalConcern
-                    communities: req.communities.map(c => c.$refText), // get the name:IDs of the referenced SensitiveCommunities
+                    communities: commsLiterals,
+                    //communities: req.communities.map(c => c.$refText), // get the name:IDs of the referenced SensitiveCommunities
                     inputs: req.inputs,
                     reflections: req.reflections
                 };
-                reqs.push(requirement);    
+                reqs.push(requirement);   
             }
         });
         

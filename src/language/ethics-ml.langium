@@ -43,7 +43,12 @@ EthicalConcern:
 SensitiveCommunity:
     'sensitiveCommunity'
     name=ID
-    (description=STRING)?;
+    (description=STRING)?
+    literals+=(SensitiveCommunityLiteral)+;
+
+SensitiveCommunityLiteral:
+    language=[Language:ID]
+    literal=STRING;
 
 
 // ****************************************************
