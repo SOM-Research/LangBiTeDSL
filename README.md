@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/671032095.svg)](https://zenodo.org/doi/10.5281/zenodo.12168925)
+
 # EthicsML
 
 Ethics ML is a Visual Studio Code extension for defining non-bias requirements and test scenarios, according to a domain-specific language (DSL).
