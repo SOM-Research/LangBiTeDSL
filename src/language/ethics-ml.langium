@@ -92,10 +92,14 @@ RequirementsModel:
 // ****************************************
 
 AIModel returns string:
-    'HuggingFaceGPT2' | 'HuggingFaceGPT2Large' | 'HuggingFaceGPT2XLarge' |
-    'HuggingChat' |
-    'OpenAITextDaVinci002' | 'OpenAITextDaVinci003' |
-    'OpenAIGPT35Turbo';
+    'HuggingFaceFlanT5Base' | 'HuggingFaceFlanT5Large' | 'HuggingFaceFlanT5XXL' |
+    'HuggingFaceMT5Base' | 'HuggingFaceMT5Large' |
+    'HuggingFaceGemma2BIT' |
+    'HuggingFaceMistral7B02Instruct' | 'HuggingFaceMistral7B01' | 'HuggingFaceMixtral8x7B01Instruct' |
+    'HuggingFaceFalcon7BInstruct' |
+    'Llama27BChat' | 'Llama213BChat' | 'Llama270BChat' |
+    'OpenAIGPT35Turbo' | 'OpenAIGPT35Turbo0613' | 'OpenAIGPT35Turbo1106' |
+    'OpenAIGPT40613' | 'OpenAIGPT4' | 'OpenAIGPT4Turbo' | 'OpenAIGPT4o';
 
 TestScenario:
     'testScenario'
