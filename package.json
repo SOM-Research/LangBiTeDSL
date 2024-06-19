@@ -11,6 +11,11 @@
     "author": {
         "name": "Sergio Morales"
     },
+    "homepage": "https://github.com/SOM-Research/EthicsML",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/SOM-Research/EthicsML"
+    },
     "keywords": [
         "Generative AI",
         "Requirements",
