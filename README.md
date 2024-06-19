@@ -4,9 +4,19 @@ Ethics ML is a Visual Studio Code extension for defining non-bias requirements a
 
 The DSL provides with the necessary constructs for modeling requirements to address non-discrimination issues, and to target particular communities that could be potentially discriminated in case a bias is present.
 
+## Repository Structure
+
+The following tree shows the list of the repository's relevant sections:
+
+- The *examples* folders contains an example of an ethical requirements model created using the DSL.
+- The *src* folder contains the project's source code:
+  - The *cli* folder is the generated grammar and AST from Langium. You may not want to dive in it as it is a generated asset.
+  - The *extension* folder contains all the code of the generation service. Could be a good place to start if you want to improve the generation of the tool.
+  - The *language* folder contains all the language features, and the grammar declaration. If you want to improve the grammar, or some of the features the plugin offers here is the place you may want to start.
+
 ## Installation 
 
-Use the packaged release of the plugin in this [repository](https://github.com/SOM-Research/EthicsML) that can be found at the root of the project. The file is `EthicsML-0.0.1.vsix`.
+Use the packaged release of the plugin in this repository, file: `EthicsML-0.0.1.vsix`.
 
 Open your terminal (or the terminal inside the VSCode) and enter:
 
@@ -82,27 +92,9 @@ testScenario
 
 ## Contributing
 
-This project is being development as part of a research line of the [SOM Research Lab](https://som-research.github.io/), but we are open to contributions from the community. If you are interested in contributing to this project, please read the [GOVERNANCE.md](GOVERNANCE.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) documents.
+This project is being development as part of a research line of the [SOM Research Lab](https://som-research.github.io/), but we are open to contributions from the community. If you are interested in contributing to this project, please read the [GOVERNANCE.md](GOVERNANCE.md) document.
 
-### Repository Structure
-
-The following tree shows the list of the repository's relevant sections:
-
-- The *examples* folders contains an example of an ethical requirements model created using the DSL.
-- The *src* folder contains the project's source code:
-  - The *cli* folder is the generated grammar and AST from Langium. You may not want to dive in it as it is a generated asset.
-  - The *extension* folder contains all the code of the generation service. Could be a good place to start if you want to improve the generation of the tool.
-  - The *language* folder contains all the language features, and the grammar declaration. If you want to improve the grammar, or some of the features the plugin offers here is the place you may want to start.
-
-#### Debugging the extensions
-
-This repo comes with an already built-in config to debug. Just go to Debug in VSCode, and launch the Extension config. Please check your port 6009 is free.
-  
-For more information about how the framework works and how the language can be extended, please refer to https://github.com/langium/langium or the VSCode extension API documentation https://code.visualstudio.com/api
-
-## Code of Conduct
-
-At SOM Research Lab we are dedicated to creating and maintaining welcoming, inclusive, safe, and harassment-free development spaces. Anyone participating will be subject to and agrees to sign on to our [Code of Conduct](CODE_OF_CONDUCT.md).
+At SOM Research Lab we are dedicated to creating and maintaining welcoming, inclusive, safe, and harassment-free development spaces. Anyone participating will be subject to and agrees to sign on to our [code of conduct](CODE_OF_CONDUCT.md).
 
 ## License
 
