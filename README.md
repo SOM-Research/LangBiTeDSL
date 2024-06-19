@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/671032095.svg)](https://zenodo.org/doi/10.5281/zenodo.12168925)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12168926.svg)](https://doi.org/10.5281/zenodo.12168926)
 
 # EthicsML
 
