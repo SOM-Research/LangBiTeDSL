@@ -1,6 +1,6 @@
 {
-    "name": "EthicsML",
-    "description": "EthicsML is a domain-specific language plug-in to describe ethical requirements for generative AI models and test scenarios.",
+    "name": "LangBiTeDSL",
+    "description": "LangBiTeDSL is a domain-specific language plug-in to describe ethical requirements for generative AI models and test scenarios.",
     "version": "0.0.1",
     "files": [
         "bin",
@@ -11,15 +11,16 @@
     "author": {
         "name": "Sergio Morales"
     },
-    "homepage": "https://github.com/SOM-Research/EthicsML",
+    "homepage": "https://github.com/SOM-Research/LangBiTeDSL",
     "repository": {
         "type": "git",
-        "url": "https://github.com/SOM-Research/EthicsML"
+        "url": "https://github.com/SOM-Research/LangBiTeDSL"
     },
     "keywords": [
         "Generative AI",
         "Requirements",
         "Ethics",
+        "Bias",
         "Testing",
         "LLM",
         "DSL"
@@ -51,7 +52,7 @@
         "langium-cli": "~2.0.0",
         "typescript": "~5.0.4"
     },
-    "displayName": "EthicsML",
+    "displayName": "LangBiTeDSL",
     "engines": {
         "vscode": "^1.67.0",
         "node": ">=16.0.0"
@@ -62,11 +63,10 @@
     "contributes": {
         "languages": [
             {
-                "id": "ethics-ml",
+                "id": "langbite-dsl",
                 "aliases": [
-                    "EthicsML",
-                    "EthicsMl",
-                    "ethics-ml"
+                    "LangBiTeDSL",
+                    "langbite-dsl"
                 ],
                 "extensions": [
                     ".ethml",
@@ -77,27 +77,27 @@
         ],
         "grammars": [
             {
-                "language": "ethics-ml",
-                "scopeName": "source.ethics-ml",
-                "path": "./syntaxes/ethics-ml.tmLanguage.json"
+                "language": "langbite-dsl",
+                "scopeName": "source.langbite-dsl",
+                "path": "./syntaxes/langbite-dsl.tmLanguage.json"
             }
         ],
         "commands": [
             {
-                "command": "ethics-ml.generateJson",
+                "command": "langbite-dsl.generateJson",
                 "title": "Generate JSON",
                 "shortTitle": "Generate JSON",
-                "category": "EthicsML",
+                "category": "LangBiTeDSL",
                 "icon": {
                     "light": "icons/json.png",
                     "dark": "icons/json.png"
                 }
             },
             {
-                "command": "ethics-ml.saveJsonDocument",
+                "command": "langbite-dsl.saveJsonDocument",
                 "title": "Save JSON",
                 "shortTitle": "Save JSON",
-                "category": "EthicsML",
+                "category": "LangBiTeDSL",
                 "icon": {
                     "light": "icons/download.png",
                     "dark": "icons/download.png"
@@ -107,27 +107,27 @@
         "menus": {
             "editor/title": [
                 {
-                    "when": "resourceLangId == ethics-ml",
-                    "command": "ethics-ml.generateJson",
+                    "when": "resourceLangId == langbite-dsl",
+                    "command": "langbite-dsl.generateJson",
                     "group": "navigation"
                 },
                 {
                     "when": "liveJSONPreviewer",
-                    "command": "ethics-ml.saveJsonDocument",
+                    "command": "langbite-dsl.saveJsonDocument",
                     "group": "navigation"
                 }
             ]
         },
         "iconThemes": [
             {
-                "id": "ethicsml",
-                "label": "Ethics ML",
-                "path": "./icons/ethics-ml.icon-theme.json"
+                "id": "langbitedsl",
+                "label": "LangBiTe DSL",
+                "path": "./icons/langbite-dsl.icon-theme.json"
             }
         ]
     },
     "activationEvents": [
-        "onLanguage:ethics-ml"
+        "onLanguage:langbite-dsl"
     ],
     "main": "./out/extension/main.cjs",
     "bin": {

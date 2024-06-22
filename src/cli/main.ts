@@ -1,8 +1,8 @@
 import type { Model } from '../language/generated/ast.js';
 import chalk from 'chalk';
 import { Command } from 'commander';
-import { EthicsMlLanguageMetaData } from '../language/generated/module.js';
-import { createEthicsMlServices } from '../language/ethics-ml-module.js';
+import { LangBiTeDSLLanguageMetaData } from '../language/generated/module.js';
+import { createEthicsMlServices } from '../language/langbite-dsl-module.js';
 import { extractAstNode } from './cli-util.js';
 import { generateJavaScript } from './generator.js';
 import { NodeFileSystem } from 'langium/node';
@@ -25,7 +25,7 @@ export default function(): void {
         // eslint-disable-next-line @typescript-eslint/no-var-requires
         .version(require('../../package.json').version);
 
-    const fileExtensions = EthicsMlLanguageMetaData.fileExtensions.join(', ');
+    const fileExtensions = LangBiTeDSLLanguageMetaData.fileExtensions.join(', ');
     program
         .command('generate')
         .argument('<file>', `source file (possible file extensions: ${fileExtensions})`)

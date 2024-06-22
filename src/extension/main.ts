@@ -2,7 +2,7 @@ import type { LanguageClientOptions, ServerOptions} from 'vscode-languageclient/
 import * as vscode from 'vscode';
 import * as path from 'node:path';
 import { LanguageClient, TransportKind } from 'vscode-languageclient/node.js';
-import { DocumentationGenerator } from './ethics-ml-documentation-generator.js';
+import { DocumentationGenerator } from './langbite-dsl-documentation-generator.js';
 import fs from 'fs';
 
 let client: LanguageClient;
@@ -12,10 +12,10 @@ let previewPanel : vscode.WebviewPanel;
 // This function is called when the extension is activated.
 export function activate(context: vscode.ExtensionContext): void {
     client = startLanguageClient(context);
-    context.subscriptions.push(vscode.commands.registerCommand('ethics-ml.generateJson', async () => {
+    context.subscriptions.push(vscode.commands.registerCommand('langbite-dsl.generateJson', async () => {
         await generateJsonService(context);
     }));
-    context.subscriptions.push(vscode.commands.registerCommand('ethics-ml.saveJsonDocument', async () => {
+    context.subscriptions.push(vscode.commands.registerCommand('langbite-dsl.saveJsonDocument', async () => {
         await saveJsonDocument(context);
      }));
 }
@@ -56,8 +56,8 @@ function startLanguageClient(context: vscode.ExtensionContext): LanguageClient {
 
     // Create the language client and start the client.
     const client = new LanguageClient(
-        'ethics-ml',
-        'EthicsML',
+        'langbite-dsl',
+        'LangBiTeDSL',
         serverOptions,
         clientOptions
     );

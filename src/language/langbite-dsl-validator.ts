@@ -1,6 +1,6 @@
 import type { ValidationAcceptor, ValidationChecks } from 'langium';
-import type { Model, EthicalRequirement, EthicsMlAstType } from './generated/ast.js';
-import type { EthicsMlServices } from './ethics-ml-module.js';
+import type { Model, EthicalRequirement, LangBiTeDSLAstType } from './generated/ast.js';
+import type { EthicsMlServices } from './langbite-dsl-module.js';
 
 /**
  * Register custom validation checks.
@@ -8,7 +8,7 @@ import type { EthicsMlServices } from './ethics-ml-module.js';
 export function registerValidationChecks(services: EthicsMlServices) {
     const registry = services.validation.ValidationRegistry;
     const validator = services.validation.EthicsMlValidator;
-    const checks: ValidationChecks<EthicsMlAstType> = {
+    const checks: ValidationChecks<LangBiTeDSLAstType> = {
         // Well-formed rules
         // 1. Selected communities for a requirement are of its concern
         EthicalRequirement: validator.checkCommunitiesAreOfEthicalConcern,

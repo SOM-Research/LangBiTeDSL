@@ -1,11 +1,11 @@
 {
-    "projectName": "EthicsMl",
+    "projectName": "LangBiTeDSL",
     "languages": [{
-        "id": "ethics-ml",
-        "grammar": "src/language/ethics-ml.langium",
+        "id": "langbite-dsl",
+        "grammar": "src/language/langbite-dsl.langium",
         "fileExtensions": [".ethml", ".ethics"],
         "textMate": {
-            "out": "syntaxes/ethics-ml.tmLanguage.json"
+            "out": "syntaxes/langbite-dsl.tmLanguage.json"
         }
     }],
     "out": "src/language/generated"

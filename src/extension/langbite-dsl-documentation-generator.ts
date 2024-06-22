@@ -1,5 +1,5 @@
 import { AstNode, LangiumParser} from 'langium';
-import { createEthicsMlServices } from '../language/ethics-ml-module.js';
+import { createEthicsMlServices } from '../language/langbite-dsl-module.js';
 import { Model, isModel } from '../language/generated/ast.js';
 import { NodeFileSystem } from 'langium/node';
 

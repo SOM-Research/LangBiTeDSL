@@ -1,7 +1,7 @@
 import type { DefaultSharedModuleContext, LangiumServices, LangiumSharedServices, Module, PartialLangiumServices } from 'langium';
 import { createDefaultModule, createDefaultSharedModule, inject } from 'langium';
-import { EthicsMlGeneratedModule, EthicsMlGeneratedSharedModule } from './generated/module.js';
-import { EthicsMlValidator, registerValidationChecks } from './ethics-ml-validator.js';
+import { LangBiTeDSLGeneratedModule, LangBiTeDSLGeneratedSharedModule } from './generated/module.js';
+import { EthicsMlValidator, registerValidationChecks } from './langbite-dsl-validator.js';
 
 /**
  * Declaration of custom services - add your own service classes here.
@@ -50,11 +50,11 @@ export function createEthicsMlServices(context: DefaultSharedModuleContext): {
 } {
     const shared = inject(
         createDefaultSharedModule(context),
-        EthicsMlGeneratedSharedModule
+        LangBiTeDSLGeneratedSharedModule
     );
     const EthicsMl = inject(
         createDefaultModule({ shared }),
-        EthicsMlGeneratedModule,
+        LangBiTeDSLGeneratedModule,
         EthicsMlModule
     );
     shared.ServiceRegistry.register(EthicsMl);

@@ -1,8 +1,8 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12168926.svg)](https://doi.org/10.5281/zenodo.12168926)
 
-# EthicsML
+# LangBiTe DSL
 
-Ethics ML is a Visual Studio Code extension for defining non-bias requirements and test scenarios, according to a domain-specific language (DSL).
+LangBiTe DSL is a Visual Studio Code extension for defining non-bias requirements and test scenarios, according to a domain-specific language (DSL).
 
 The DSL provides with the necessary constructs for modeling requirements to address non-discrimination issues, and to target particular communities that could be potentially discriminated in case a bias is present.
 
@@ -18,14 +18,14 @@ The following tree shows the list of the repository's relevant sections:
 
 ## Installation 
 
-Use the packaged release of the plugin in this repository, file: `EthicsML-0.0.1.vsix`.
+Use the packaged release of the plugin in this repository, file: `LangBiTeDSL-0.0.1.vsix`.
 
 Open your terminal (or the terminal inside the VSCode) and enter:
 
 ```
-git clone https://github.com/SOM-Research/EthicsML.git ethics-ml
-cd ethics-ml 
-code --install-extension EthicsML-0.0.1.vsix
+git clone https://github.com/SOM-Research/LangBiTeDSL.git langbite-dsl
+cd langbite-dsl 
+code --install-extension LangBiTeDSL-0.0.1.vsix
 ```
 
 ## Usage

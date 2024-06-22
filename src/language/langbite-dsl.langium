@@ -1,4 +1,4 @@
-grammar EthicsMl
+grammar LangBiTeDSL
 
 
 terminal ID: /[_a-zA-Z][\w_]*/;

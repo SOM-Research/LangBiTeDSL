@@ -1,7 +1,7 @@
 import { startLanguageServer } from 'langium';
 import { NodeFileSystem } from 'langium/node';
 import { createConnection, ProposedFeatures } from 'vscode-languageserver/node.js';
-import { createEthicsMlServices } from './ethics-ml-module.js';
+import { createEthicsMlServices } from './langbite-dsl-module.js';
 
 // Create a connection to the client
 const connection = createConnection(ProposedFeatures.all);
