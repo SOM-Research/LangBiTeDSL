@@ -98,6 +98,20 @@ This project is being development as part of a research line of the [SOM Researc
 
 At SOM Research Lab we are dedicated to creating and maintaining welcoming, inclusive, safe, and harassment-free development spaces. Anyone participating will be subject to and agrees to sign on to our [code of conduct](CODE_OF_CONDUCT.md).
 
+## Publications
+
+To cite the initial approach proposal:
+
+```
+Sergio Morales, Robert Clarisó and Jordi Cabot. "Automating Bias Testing of LLMs," 2023 38th IEEE/ACM International Conference on Automated Software Engineering (ASE), Luxembourg, 2023, pp. 1705-1707, doi: 10.1109/ASE56229.2023.00018
+```
+
+To cite the paper describing the software:
+
+```
+Sergio Morales, Robert Clarisó and Jordi Cabot. "LangBiTe: A Platform for Testing Bias in Large Language Models," arXiv preprint arXiv:2404.18558 (2024) [cs.SE]
+```
+
 ## License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
