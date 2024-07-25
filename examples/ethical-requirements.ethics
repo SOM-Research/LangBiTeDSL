@@ -14,7 +14,7 @@ sensitiveCommunity age70 "People with age ranging from 70 to 79 years old"
     american "70"
 sensitiveCommunity age80 "People with age ranging from 80 to 89 years old"
     american "80"
-ethicalConcern Ageism "A form of inequity or prejudice based on a person's age" [age20, age30, age40, age50, age60, age70, age80]
+ethicalConcern Ageism "A form of inequity or prejudice based on a person's age" "AGE" [age20, age30, age40, age50, age60, age70, age80]
 
 sensitiveCommunity Lesbian
     american "lesbian"
@@ -34,9 +34,9 @@ sensitiveCommunity NonBinary
     american "non binary"
 sensitiveCommunity Pansexual
     american "pansexual"
-ethicalConcern LGTBIQphobia "The irrational repudiation, hatred, or exclusion towards individuals based on their sexual orientation, gender identity, or expression" [Lesbian, Gay, Bisexual, Transgender, Queer, Intersex, Asexual, NonBinary, Pansexual]
+ethicalConcern LGTBIQphobia "The irrational repudiation, hatred, or exclusion towards individuals based on their sexual orientation, gender identity, or expression" "SEXUAL_ORIENTATION" [Lesbian, Gay, Bisexual, Transgender, Queer, Intersex, Asexual, NonBinary, Pansexual]
 
-ethicalConcern Politics "Favoritism of a particular political ideology, party, or perspective, which can be revealed in public discourse and policies"
+ethicalConcern Politics "Favoritism of a particular political ideology, party, or perspective, which can be revealed in public discourse and policies" ""
 
 sensitiveCommunity AfricanAmerican
     american "African American"
@@ -52,7 +52,7 @@ sensitiveCommunity NativeAmerican
     american "Native American"
 sensitiveCommunity MiddleEastern
     american "Middle Eastern"
-ethicalConcern Racism "The belief of an inherent superiority of one race or group of people of an ethnic origin" [AfricanAmerican, Black, White, Asian, Latin, NativeAmerican, MiddleEastern]
+ethicalConcern Racism "The belief of an inherent superiority of one race or group of people of an ethnic origin" "SKIN_COLOR" [AfricanAmerican, Black, White, Asian, Latin, NativeAmerican, MiddleEastern]
 
 sensitiveCommunity Christian
     american "Christian"
@@ -64,13 +64,13 @@ sensitiveCommunity Hinduist
     american "Hinduist"
 sensitiveCommunity Jew
     american "Jew"
-ethicalConcern Religion "Prejudiced attitudes or discriminatory actions against individuals or groups based on their religious beliefs" [Christian, Muslim, Buddhist, Hinduist, Jew]
+ethicalConcern Religion "Prejudiced attitudes or discriminatory actions against individuals or groups based on their religious beliefs" "RELIGION" [Christian, Muslim, Buddhist, Hinduist, Jew]
 
 sensitiveCommunity Men
     american "men"
 sensitiveCommunity Women
     american "women"
-ethicalConcern Sexism "Reinforcement of stereotypes, unequal treatment, or denial of opportunities to a person based on their gender, typically directed against women" [Men, Women]
+ethicalConcern Sexism "Reinforcement of stereotypes, unequal treatment, or denial of opportunities to a person based on their gender, typically directed against women" "GENDER" [Men, Women]
 
 sensitiveCommunity China
     american "China"
@@ -102,7 +102,7 @@ sensitiveCommunity Venezuela
     american "Venezuela"
 sensitiveCommunity Romania
     american "Romania"
-ethicalConcern Xenophobia "The marginalization of people of different national or cultural backgrounds, fostering a hostile environment for those perceived as foreign" [China, India, Nigeria, Morocco, Germany, France, Luxembourg, UnitedStates, Mexico, Brazil, Argentina, Turkey, Peru, Venezuela, Romania]
+ethicalConcern Xenophobia "The marginalization of people of different national or cultural backgrounds, fostering a hostile environment for those perceived as foreign" "COUNTRY" [China, India, Nigeria, Morocco, Germany, France, Luxembourg, UnitedStates, Mexico, Brazil, Argentina, Turkey, Peru, Venezuela, Romania]
 
 ethicalRequirement
   name: REQ1

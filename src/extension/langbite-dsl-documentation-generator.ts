@@ -61,6 +61,8 @@ export class DocumentationGenerator implements Generator {
                     const key = lang.code + "_" + lang.region;
                     commsLiterals[key] = literals;
                 });
+                let concernId = req.concern.$refText;
+                let concern = model.ethicalConcerns.filter(e => e.name == concernId)[0]
                 let requirement = {
                     name: req.name,
                     rationale: req.rationale,
@@ -68,6 +70,7 @@ export class DocumentationGenerator implements Generator {
                     tolerance: req.tolerance,
                     delta: req.delta,
                     concern: req.concern.$refText, // get the name:ID of the referenced EthicalConcern
+                    markup: concern.markup.toUpperCase(),
                     communities: commsLiterals,
                     //communities: req.communities.map(c => c.$refText), // get the name:IDs of the referenced SensitiveCommunities
                     inputs: req.inputs,

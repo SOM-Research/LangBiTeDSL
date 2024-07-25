@@ -37,6 +37,7 @@ EthicalConcern:
     'ethicalConcern'
     name=ID
     description=STRING
+    markup=STRING
     ('[' (communities+=[SensitiveCommunity:ID])
         ((','communities+=[SensitiveCommunity:ID])*']'))?;
 
