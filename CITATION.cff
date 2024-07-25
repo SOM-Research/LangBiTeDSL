@@ -1,18 +1,9 @@
-abstract: <p>LangBiTe DSL is a Visual Studio Code extension for defining non-bias
-  requirements and test scenarios, according to a domain-specific language (DSL).
-  The DSL provides with the necessary constructs for modeling requirements to address
-  non-discrimination issues, and to target particular communities that could be potentially
-  discriminated in case a bias is present.</p>
+cff-version: 1.1.0
+message: "If you use this software, please cite it as below."
 authors:
 - family-names: Morales
   given-names: Sergio
-  orcid: 0000-0002-5921-9440
-cff-version: 1.2.0
-date-released: '2024-06-22'
-doi: 10.5281/zenodo.12369254
-license:
-- cc-by-4.0
-repository-code: https://github.com/SOM-Research/LangBiTeDSL
+orcid: https://orcid.org/0000-0002-5921-9440
 title: LangBiTe DSL
-type: software
-version: v1.0.0
+version: v1.1.0
+date-released: 2024-07-25
