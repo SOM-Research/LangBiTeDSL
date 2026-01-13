@@ -106,7 +106,7 @@ This repository is the companion to the following research paper:
 
 Other publications:
 
-> Sergio Morales, Robert Clarisó and Jordi Cabot. "Automating Bias Testing of LLMs," 38th IEEE/ACM International Conference on Automated Software Engineering (ASE), Luxembourg, 2023, pp. 1705-1707, doi: 10.1109/ASE56229.2023.00018 ([link](https://doi.org/10.1109/ASE56229.2023.00018))
+> Sergio Morales, Robert Clarisó and Jordi Cabot. "Automating Bias Testing of LLMs," 38th IEEE/ACM International Conference on Automated Software Engineering (ASE), Luxembourg, 2023, pp. 1705-1707, doi: [10.1109/ASE56229.2023.00018](https://doi.org/10.1109/ASE56229.2023.00018)
 
 > Sergio Morales, Robert Clarisó and Jordi Cabot. "LangBiTe: A Platform for Testing Bias in Large Language Models," SoftwareX 31, page 102248, 2025.
 doi: [10.1016/j.softx.2025.102248](https://doi.org/10.1016/j.softx.2025.102248)
