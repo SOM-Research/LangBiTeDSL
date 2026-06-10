@@ -84,7 +84,7 @@ fragment Requirements:
 
 RequirementsModel:
     'requirementsModel'
-    //'name:' name=ID
+    'name:' name=ID
     Requirements;
 
 
@@ -105,7 +105,7 @@ AIModel returns string:
 TestScenario:
     'testScenario'
     'name:' name=ID
-    //'requirementsModel:' requirementsModel=[RequirementsModel:ID]
+    'requirementsModel:' requirementsModel=[RequirementsModel:ID]
     'timestamp:' timestamp=INT // millis
     'nTemplates:' nTemplates=INT
     'nRetries:' nRetries=INT
